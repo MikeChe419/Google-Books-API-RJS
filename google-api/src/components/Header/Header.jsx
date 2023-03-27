@@ -1,30 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import styles from './header.module.css';
 import ReactHookFormSelect from "../SelectField/SelectField";
 import Search from "../Search/Search";
-import { useState, useCallback } from "react";
-import api from "../../utils/api";
 
-
-const Header = () => {
-    const [searchQuery, setSearchQuery] = useState('');
+const Header = ({handleFormSubmit, handleInputChange}) => {
     const [selectedOption, setSelectedOption] = useState(null);
-
-    const handleRequest = useCallback(() => {
-        api.getBooks(searchQuery)
-         .then((res) => console.log(res))
-         .catch(err => console.log(err))
-    }, [searchQuery])
-
-    const handleInputChange = useCallback((inputValue) => {
-        setSearchQuery(inputValue);
-      }, [setSearchQuery])
-
-
-    const handleFormSubmit = useCallback((inputText) => {
-        setSearchQuery(inputText);
-        handleRequest();
-      }, [setSearchQuery, handleRequest])
 
     const options = [
         { value: 'all', label: 'All'},

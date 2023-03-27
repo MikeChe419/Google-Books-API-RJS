@@ -19,7 +19,7 @@ const Search = ({onSubmit: propsOnSubmit, onInput}) => {
     }, [propsOnSubmit, inputText])
 
     const handleClearInput = useCallback((e) => {
-        e.stopPropogation()
+        e.stopPropagation()
         setInputText('');
         onInput &&onInput('')
     }, [setInputText, onInput])
