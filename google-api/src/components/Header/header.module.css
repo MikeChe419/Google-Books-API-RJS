@@ -1,0 +1,20 @@
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url('../../vendor/books.jpg');
+    background-position: center center;
+    background-size: 70%;
+    color: #D3D3D3;
+}
+
+.title {
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    
+}
+
+.select_wrapper {
+    display: flex;
+    justify-content: space-around;
+}

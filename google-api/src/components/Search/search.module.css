@@ -1,0 +1,13 @@
+.search_form {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search_input {
+    width: 100%;
+    max-width: 900px;
+    padding: 10px;
+    border-radius: 5px;
+}
