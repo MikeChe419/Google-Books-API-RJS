@@ -6,8 +6,9 @@ import Search from "../Search/Search";
 
 const Header = ({handleFormSubmit, handleInputChange}) => {
     const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedSort, setSelectedSort] = useState('relevance')
 
-    const options = [
+    const filterOptions = [
         { value: 'all', label: 'All'},
         { value: 'art', label: 'Art'},
         { value: 'biography', label: 'Biography'},
@@ -15,6 +16,11 @@ const Header = ({handleFormSubmit, handleInputChange}) => {
         { value: 'history', label: 'History'},
         { value: 'medical', label: 'Medical'},
         { value: 'poetry', label: 'Poetry'},
+    ]
+
+    const sortOptions = [
+        {value: 'relevance', label: 'Relevance'},
+        {value: 'newest', label: "Newest"}
     ]
 
     
@@ -28,14 +34,17 @@ const Header = ({handleFormSubmit, handleInputChange}) => {
                 <div>
                 <span>Categories</span>
                 <ReactHookFormSelect
-                    options = {options}
+                    options = {filterOptions}
                     defaultValue={selectedOption}
                     onChange={setSelectedOption} 
                 />
                 </div>
                 <div>
                 <span>Sorting by</span>
-                <ReactHookFormSelect />
+                <ReactHookFormSelect
+                    options={sortOptions}
+                    defaultValue={selectedSort}
+                    onChange={setSelectedSort} />
                 </div>
                 
             </div>

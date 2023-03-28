@@ -2,6 +2,7 @@ const onResponce = (res) => {
     return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
 }
 
+const key = 'AIzaSyDxEEhCdgENKEOlJXYFFoSMLUil6_FXoiI'
 class Api {
     constructor() {
         this._baseUrl = 'https://www.googleapis.com/books/v1';

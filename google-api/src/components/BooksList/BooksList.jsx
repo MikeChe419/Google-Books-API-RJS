@@ -1,5 +1,5 @@
 import styles from './booksList.module.css';
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { BookContext } from '../../context/booksContext';
 import Book from '../Book/Book';
 
@@ -8,7 +8,11 @@ const BooksList = () => {
      return (
     <ul>
         {
-            books.map((item ) => <Book key = {item.id} volumeInfo={item.volumeInfo}/>)
+            books.map((item ) => 
+            <Book 
+                key = {item.id} 
+                volumeInfo={item.volumeInfo}
+                img = {item.volumeInfo.imageLinks}/>)
         }
     </ul>
        
